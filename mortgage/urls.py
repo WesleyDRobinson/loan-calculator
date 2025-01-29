@@ -1,7 +1,10 @@
-from django.urls import path
+from django.urls import include, path
+from rest_framework.routers import DefaultRouter
+from .views import LoanViewSet
 
-from . import views
+router = DefaultRouter()
+router.register(r"loans", LoanViewSet)
 
 urlpatterns = [
-    path("", views.index, name="index"),
+    path("", include(router.urls)),
 ]
