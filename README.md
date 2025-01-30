@@ -44,7 +44,7 @@ visit http://127.0.0.1:8000/
 
 # Rationale
 
-I started this project from scractch using the Django Docs.
+I started this project from scratch using the Django Docs.
 It evolved to using some Django Rest Framework.
 I used Django Forms and got a bit carried away making the templates and UI.
 I choose plain HTML and tachyons.io for the markup and styling.
