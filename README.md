@@ -4,20 +4,27 @@
 
 To get started, clone this repo.
 
-### Set up logging 
+## Docker
+Build it:
+`docker build -t loans`
+Run it:
+`docker run -p 8000:8000 loans`
+visit it: 
+http://localhost:8000 
+
+## bootstrap with pip
 add back log dir:
 `mkdir logs`
 `touch logs/error.log`
 
-## Docker
-`docker build -t loans`
-`docker run -p 8000:8000 loans`
-visit http://localhost:8000 to get started
-
-## bootstrap with pip
+Install the requirements (optionally create a virtualenv):
 `python -m pip install -r requirements`
+
+Run the migrations:
 `python manage.py makemigrations`
 `python manage.py migrate`
+
+start the server:
 `python manage.py runserver`
 visit http://127.0.0.1:8000/
 
