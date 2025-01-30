@@ -44,22 +44,13 @@ visit http://127.0.0.1:8000/
 
 # Rationale
 
-I started this project from scractch using the Django Docs[1]
-I evoled to using some Django Rest Framework.
+I started this project from scractch using the Django Docs.
+It evolved to using some Django Rest Framework.
 I used Django Forms and got a bit carried away making the templates and UI.
+I choose plain HTML and tachyons.io for the markup and styling.
 I Dockerized it, and added a Makefile to make it easier to run.
 
 I am looking forward to discussing my decisions and trade-offs.
-
-[1]: 
-Each of these boilerplate/ cookiecutter examples failed to get me going, even after fixing undocumented environment variables: 
-https://github.com/piepworks/blaze-starter
-https://github.com/django-bridge/django-bridge
-https://cookiecutter-django.readthedocs.io/en/latest/index.html
-
-The only one that was actually workable, but it's missing SQLite bindings:
-https://vercel.com/templates/python/django-hello-world
-
 
 ### Should do next:
 Create functionality for users to edit and delete these loans. 
