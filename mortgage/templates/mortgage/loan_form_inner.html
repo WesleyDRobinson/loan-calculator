@@ -1,0 +1,74 @@
+{% extends 'mortgage/base.html' %}
+{% block content %}
+    <fieldset class="w-100 bn">
+        <div class="field mb3">
+            <div class="flex justify-between items-center">
+                <label for="{{ form.purchase_price.id_for_label }}">{{ form.purchase_price.label }}</label>
+                <input class="input-reset br2 pa2 ba bw2 b--black-20" type="number" step="1000"
+                       name="{{ form.purchase_price.html_name }}"
+                       id="{{ form.purchase_price.id_for_label }}"
+                       required>
+            </div>
+        </div>
+        <div class="field mb3">
+            <div class="flex justify-between items-center">
+                <label for="{{ form.down_payment_value.id_for_label }}">{{ form.down_payment_value.label }}</label>
+                <div>
+                    <div class="flex items-center">
+                        <label class="clip">{{ form.down_payment_type.label }}</label>
+
+                        <div>
+                            <input class="input-reset br2 pa2 ba bw2 b--black-20" type="number"
+                                   name="{{ form.down_payment_value.html_name }}"
+                                   id="{{ form.down_payment_value.id_for_label }}"
+                                   placeholder="e.g., 20"
+                                   required>
+                            <div class="mt2 f5">
+                                {{ form.down_payment_type }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="field mb3">
+            <div class="flex justify-between items-center">
+                <label for="{{ form.mortgage_term_value.id_for_label }}">{{ form.mortgage_term_value.label }}</label>
+                <div>
+                    <div class="flex items-center">
+                        <label class="clip">{{ form.mortgage_term_unit.label }}</label>
+
+                        <div>
+                            <input class="input-reset br2 pa2 ba bw2 b--black-20" type="number"
+                                   name="{{ form.mortgage_term_value.html_name }}"
+                                   id="{{ form.mortgage_term_value.id_for_label }}"
+                                   placeholder="e.g., 30"
+                                   required>
+                        </div>
+                    </div>
+                    <div class="mt2 f5">
+                        {{ form.mortgage_term_unit }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="field mb3">
+            <div class="flex justify-between items-center">
+                <label for="{{ form.interest_rate.id_for_label }}">{{ form.interest_rate.label }}</label>
+                <input class="input-reset br2 pa2 ba bw2 b--black-20" type="number" step="0.1"
+                       name="{{ form.interest_rate.html_name }}"
+                       id="{{ form.interest_rate.id_for_label }}"
+                       required>
+            </div>
+        </div>
+    </fieldset>
+
+    <script>
+        const radios = [document.getElementById('id_down_payment_type'), document.getElementById('id_mortgage_term_unit')]
+        radios.forEach(r => {
+            r.className = 'w-100 flex'
+            Array.from(r.children).forEach(c => c.classList.add('w-50', 'tr'))
+        })
+    </script>
+{% endblock %}

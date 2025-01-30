@@ -1,0 +1,26 @@
+{% extends 'mortgage/base.html' %}
+{% block content %}
+    <h1>Create a New Loan Scenario</h1>
+
+    <div class="mb4">
+        <a href="{% url 'loan-list' %}" class="pa2">
+            <span class="blue">Back to Loan List</span>
+        </a>
+    </div>
+
+    <form method="post" action="{% url 'loan-create-form' %}" class="w-100">
+        {% csrf_token %}
+
+        <div class="ba b--black-10 pa3 br2">
+            {{ form }}
+        </div>
+
+        <div class="mt4 tc">
+            <button type="submit" class="br2 ba bw2 b--white-30 ph3 pv2 bg-green grow">
+                <span class="near-white">Evaluate scenario</span>
+            </button>
+        </div>
+    </form>
+
+    <div id="errors" class="w-100 mb3 red"></div>
+{% endblock %}

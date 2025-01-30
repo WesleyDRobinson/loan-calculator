@@ -1,0 +1,66 @@
+{% extends 'mortgage/base.html' %}
+{% block content %}
+    <h1>Loan Scenarios</h1>
+
+    <div class="mb4">
+        <a href="{% url 'loan-create-form' %}">
+            <span class="blue">Create New Loan Scenario</span>
+        </a>
+    </div>
+
+    <table class=" collapse ba br2 b--black-10 pv2 ph3 db">
+        <thead class="top-0 bg-light-gray bb b--black-30" style="position:sticky;">
+        <tr>
+            <th class="pv2 ph3 tr f6 fw6 ttu navy">Id</th>
+            <th class="pv2 ph3 tr f6 fw6 ttu navy">Purchase Price</th>
+            <th class="pv2 ph3 tr f6 fw6 ttu navy">Down Payment</th>
+            <th class="pv2 ph3 tr f6 fw6 ttu navy">Mortgage Term (months)</th>
+            <th class="pv2 ph3 tr f6 fw6 ttu navy">Interest Rate</th>
+
+            <th class="pv2 ph3 tr f6 fw6 ttu green">Total Loan Amount</th>
+            <th class="pv2 ph3 tr f6 fw6 ttu green">Monthly Payment</th>
+            <th class="pv2 ph3 tr f6 fw6 ttu green">Total Paid</th>
+            <th class="pv2 ph3 tr f6 fw6 ttu green">Total Interest</th>
+
+            <th class="pv2 ph3 tr f6 fw6 ttu gray">Created</th>
+            <th class="pv2 ph3 tr f6 fw6 ttu gray">Updated</th>
+            <th class="pv2 ph3 tr f6 fw6 ttu gray">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for loan in loans %}
+            <tr class="bb b--black-20">
+                <td class="pv2 ph3 tr navy">{{ loan.id }}</td>
+                <td class="pv2 ph3 tr navy">{{ loan.purchase_price }}</td>
+                <td class="pv2 ph3 tr navy">{{ loan.down_payment }}</td>
+                <td class="pv2 ph3 tr navy">{{ loan.mortgage_term }}</td>
+                <td class="pv2 ph3 tr navy">{{ loan.interest_rate }}</td>
+
+                <td class="pv2 ph3 tr dark-green">{{ loan.total_loan_amount }}</td>
+                <td class="pv2 ph3 tr dark-green">{{ loan.monthly_payment }}</td>
+                <td class="pv2 ph3 tr dark-green">{{ loan.total_amount_paid }}</td>
+                <td class="pv2 ph3 tr dark-green">{{ loan.total_interest_paid }}</td>
+
+                <td class="pv2 ph3 tr gray f7">{{ loan.created_at | date:"SHORT_DATETIME_FORMAT" }}</td>
+                <td class="pv2 ph3 tr gray f7">{{ loan.updated_at | date:"SHORT_DATETIME_FORMAT" }}</td>
+                <td class="pv2 ph3 tr gray">
+                    <a href="{% url 'loan-detail' loan.id %}">
+                        <span class="blue">View</span>
+                    </a>
+                </td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td class="pv2 ph3 tc" colspan="12">No loan scenarios available yet.</td>
+            </tr>
+            <tr>
+                <td class="pv2 ph3 tc" colspan="12">
+                    <a href="{% url 'loan-create-form' %}">
+                        <span class="blue">Create New Loan Scenario</span>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'mortgage/base.html' %}
+{% block content %}
+    <h1>Loan Scenario {{ loan.id }}</h1>
+    <ul class="list w-80 pa0 w4">
+        <li class="flex justify-between mb2">
+            <span class="ttu f6">Purchase Price</span>
+            <span class="flex-grow-1 bt-0 br-0 bl-0 mb1 bw1 b--dotted"></span>
+            ${{ loan.purchase_price }}
+        </li>
+        <li class="flex justify-between mb2">
+            <span class="ttu f6">Down Payment</span>
+            <span class="flex-grow-1 bt-0 br-0 bl-0 mb1 bw1 b--dotted"></span>
+            ${{ loan.down_payment }}
+        </li>
+        <li class="flex justify-between mb2">
+            <span class="ttu f6">Mortgage Term</span>
+            <span class="flex-grow-1 bt-0 br-0 bl-0 mb1 bw1 b--dotted"></span> {{ loan.mortgage_term }} months
+        </li>
+        <li class="flex justify-between mb2">
+            <span class="ttu f6">Interest Rate</span>
+            <span class="flex-grow-1 bt-0 br-0 bl-0 mb1 bw1 b--dotted"></span> {{ loan.interest_rate }}%
+        </li>
+        <li class="flex justify-between mb2">
+            <span class="ttu f6">Total Loan Amount</span>
+            <span class="flex-grow-1 bt-0 br-0 bl-0 mb1 bw1 b--dotted"></span>
+            ${{ loan.total_loan_amount }}
+        </li>
+        <li class="flex justify-between mb2">
+            <span class="ttu f6">Monthly Payment</span>
+            <span class="flex-grow-1 bt-0 br-0 bl-0 mb1 bw1 b--dotted"></span>
+            ${{ loan.monthly_payment }}
+        </li>
+        <li class="flex justify-between mb2">
+            <span class="ttu f6">Total Amount Paid</span>
+            <span class="flex-grow-1 bt-0 br-0 bl-0 mb1 bw1 b--dotted"></span>
+            ${{ loan.total_amount_paid }}
+        </li>
+        <li class="flex justify-between mb2">
+            <span class="ttu f6">Total Interest Paid</span>
+            <span class="flex-grow-1 bt-0 br-0 bl-0 mb1 bw1 b--dotted"></span>
+            ${{ loan.total_interest_paid }}
+        </li>
+    </ul>
+    <a href="{% url 'loan-list' %}">
+        <span class="blue">Back to Loan List</span>
+    </a>
+{% endblock %}
