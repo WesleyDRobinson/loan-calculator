@@ -3,7 +3,7 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-RUN mkdir -p /log
+RUN mkdir -p /logs
 RUN touch /logs/error.log
 
 COPY requirements.txt /app
