@@ -2,8 +2,10 @@
 
 set -e
 
-echo "${0}: running migrationg"
-python manage.py makemigrations --merge
+echo "${0}: making migrations"
+python manage.py makemigrations
+
+echo "${0}: running migrations"
 python manage.py migrate --noinput
 
 echo "${0}: running server"

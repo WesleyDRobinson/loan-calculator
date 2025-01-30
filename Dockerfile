@@ -9,7 +9,7 @@ RUN touch /app/logs/error.log
 COPY requirements.txt /app
 COPY docker/entrypoint.sh /app
 
-RUN chmod +x entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
 
 RUN python -m pip install --upgrade pip
 RUN python -m pip install -r requirements.txt
