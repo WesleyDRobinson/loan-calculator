@@ -3,8 +3,8 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-RUN mkdir -p /logs
-RUN touch /logs/error.log
+RUN mkdir -p /app/logs
+RUN touch /app/logs/error.log
 
 COPY requirements.txt /app
 COPY docker/entrypoint.sh /app
