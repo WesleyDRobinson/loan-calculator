@@ -4,7 +4,7 @@ FROM python:3.11-slim
 WORKDIR /app
 
 RUN mkdir -p /log
-RUN touch /log/error.log
+RUN touch /logs/error.log
 
 COPY requirements.txt /app
 COPY docker/entrypoint.sh /app
