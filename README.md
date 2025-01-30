@@ -6,7 +6,7 @@ To get started, clone this repo.
 
 ## Docker
 Build it:
-`docker build -t loans`
+`docker build -t loans .`
 Run it:
 `docker run -p 8000:8000 loans`
 visit it: 
