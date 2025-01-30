@@ -4,13 +4,19 @@
 
 To get started, clone this repo.
 
-## Docker
 Create a .env.list file 
 `touch .env.list`
 
 and add your API Ninja API key:
 `echo "API_NINJAS_KEY=your_key_here" >> .env.list`
 
+## Make
+`make build`
+`make run`
+
+`make rebuild` will rebuild the docker image and run it
+
+## Docker
 Build it:
 `docker build -t loans .`
 
