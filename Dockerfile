@@ -8,7 +8,7 @@ RUN touch /app/logs/error.log
 
 COPY requirements.txt /app
 COPY docker/entrypoint.sh /app
-COPY .env.list /app
+COPY ./.env.list /app
 
 RUN chmod +x /app/entrypoint.sh
 
