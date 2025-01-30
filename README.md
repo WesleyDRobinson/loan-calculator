@@ -5,10 +5,18 @@
 To get started, clone this repo.
 
 ## Docker
+Create a .env.list file 
+`touch .env.list`
+
+and add your API Ninja API key:
+`echo "API_NINJAS_KEY=your_key_here" >> .env.list`
+
 Build it:
 `docker build -t loans .`
+
 Run it:
 `docker run -p 8000:8000 loans`
+
 visit it: 
 http://localhost:8000 
 
