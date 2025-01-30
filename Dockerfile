@@ -1,10 +1,10 @@
 # Use the official Python image from the Docker Hub
 FROM python:3.11-slim
 
-RUN mkdir /log
-RUN touch /log/error.log
-
 WORKDIR /app
+
+RUN mkdir -p /log
+RUN touch /log/error.log
 
 COPY requirements.txt /app
 COPY docker/entrypoint.sh /app
