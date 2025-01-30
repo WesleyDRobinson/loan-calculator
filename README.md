@@ -44,10 +44,15 @@ visit http://127.0.0.1:8000/
 
 # Rationale
 
-I read the specs then followed my heart.
+I started this project from scractch using the Django Docs[1]
+I evoled to using some Django Rest Framework.
+I used Django Forms and got a bit carried away making the templates and UI.
+I Dockerized it, and added a Makefile to make it easier to run.
 
-I'd never set up Django from scratch, and I spent a few hours plunking around with boilerplates
-Each of these falied with some undocumented environment variables or strange requirements: 
+I am looking forward to discussing my decisions and trade-offs.
+
+[1]: 
+Each of these boilerplate/ cookiecutter examples failed to get me going, even after fixing undocumented environment variables: 
 https://github.com/piepworks/blaze-starter
 https://github.com/django-bridge/django-bridge
 https://cookiecutter-django.readthedocs.io/en/latest/index.html
@@ -55,15 +60,10 @@ https://cookiecutter-django.readthedocs.io/en/latest/index.html
 The only one that was actually workable, but it's missing SQLite bindings:
 https://vercel.com/templates/python/django-hello-world
 
-So I went back to Django Docs and started from scratch.
-I tried out some Django Rest Framework.
-I made Django Forms and got a bit carries away making the templates and UI.
-I Dockerized it.
 
-I'll be happy to discuss any decisions.
-
-### Should dos
-Let users edit and delete these. The API would support it, but I didn't make the UI for it.
+### Should do next:
+Create functionality for users to edit and delete these loans. 
+The DRF API supports it already, but I didn't make the UI for it.
 
 ### Could dos
 
